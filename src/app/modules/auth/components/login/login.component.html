@@ -58,14 +58,21 @@
         [text]="'Ta kontrolkanie moze byc pusta'"
       ></app-alert>
     </ng-container>
-    <div class="d-flex justify-content-end"></div>
-    <button
-      mat-raised-button
-      color="primary"
-      type="submit"
-      [disabled]="!f.valid"
-    >
-      Zaloguj się
-    </button>
+    <div class="d-flex justify-content-end">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!f.valid"
+      >
+        Zaloguj się
+      </button>
+    </div>
+    <div>
+      <p class="text-center">
+        Nie masz konta? <a routerLink="/rejestracja"> Zarejestruj sie!</a>
+      </p>
+    </div>
+    <app-alert *ngIf="errorMessage" [text]="errorMessage"></app-alert>
   </form>
 </div>
