@@ -24,7 +24,9 @@ export class LoginComponent {
           this.errorMessage = 'Podano nieprawidlove dane do logowania';
         }
       },
-      error: (err) => (this.errorMessage = ' Wysapil bląd'),
+      error: (err) => {
+        this.errorMessage = ' Wysapil bląd';
+      },
     });
   }
 }
