@@ -30,9 +30,8 @@ export class RegisterComponent implements OnInit {
       validators: [Validators.required],
       nonNullable: true,
     }),
-    hobbies: new FormArray([new FormControl('')]),
   });
-
+  //hobbies: new FormArray([new FormControl('')]),
   constructor(
     private authService: AuthService,
     private router: Router,
