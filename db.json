@@ -28,6 +28,24 @@
       "phone": "123456789",
       "address": "Pruszkow",
       "postcode": "05-800"
+    },
+    {
+      "id": 2,
+      "firstname": "Test2",
+      "surname": "surName",
+      "email": "test2@com",
+      "phone": "123456789",
+      "address": "Pruszkow",
+      "postcode": "05-800"
+    },
+    {
+      "id": 3,
+      "firstname": "Test3",
+      "surname": "surName",
+      "email": "test3@com",
+      "phone": "123456789",
+      "address": "Pruszkow",
+      "postcode": "05-800"
     }
   ]
 }
