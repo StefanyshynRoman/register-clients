@@ -1,8 +1,13 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Client, ClientResponse, PostClient } from '../models/client.model';
+import {
+  Client,
+  ClientResponse,
+  GetClientResponse,
+  PostClient,
+} from '../models/client.model';
 
 @Injectable({
   providedIn: 'root',
@@ -12,12 +17,34 @@ export class ClientsService {
 
   constructor(private http: HttpClient) {}
 
-  getClients(): Observable<Client[]> {
+  getClients(
+    pageIndex: number,
+    itemPerPage: number,
+    sortDirection: string,
+    sortColumnName: string,
+  ): Observable<GetClientResponse> {
+    let params;
+    if (sortColumnName) {
+      params = new HttpParams()
+        .append('_page', pageIndex)
+        .append('_limit', itemPerPage)
+        .append('_sort', sortColumnName)
+        .append('_order', sortDirection);
+    } else {
+      params = new HttpParams()
+        .append('_page', pageIndex)
+        .append('_limit', itemPerPage);
+    }
     return this.http
-      .get<ClientResponse[]>(`${this.apiUrl}/clients`)
+      .get<ClientResponse[]>(`${this.apiUrl}/clients`, {
+        observe: 'response',
+        params,
+      })
       .pipe(
-        map((clients) =>
-          clients.map(
+        map((response) => {
+          if (!response.body) return { clients: [], totalCount: 0 };
+
+          const clientsArr: Client[] = response.body.map(
             ({ id, firstname, surname, email, phone, address, postcode }) =>
               new Client(
                 id,
@@ -28,8 +55,11 @@ export class ClientsService {
                 address,
                 postcode,
               ),
-          ),
-        ),
+          );
+          const totalCount = Number(response.headers.get('X-Total-Count'));
+
+          return { clients: clientsArr, totalCount };
+        }),
       );
   }
 
