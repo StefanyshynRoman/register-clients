@@ -3,7 +3,7 @@
     <mat-label>Filtrowanie:</mat-label>
     <input
       matInput
-      (keyup)="applyFilter($event)"
+      [formControl]="filtertValue"
       placeholder="Wpisz fraze"
       #input
     />
@@ -34,7 +34,13 @@
       <ng-container matColumnDef="buttons">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let row">
-          <button mat-raised-button color="primary">Szczegoly</button>
+          <button
+            mat-raised-button
+            color="primary"
+            [routerLink]="'/klienci/' + row.id"
+          >
+            Szczegoly
+          </button>
         </td>
       </ng-container>
 
