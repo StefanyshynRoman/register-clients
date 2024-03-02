@@ -32,13 +32,14 @@
     </div>
 
     <div>
-      <mat-form-field appearance="fill">
+      <app-phone-control formControlName="phone"></app-phone-control>
+      <!-- <mat-form-field appearance="fill">
         <mat-label>Numer telefonu</mat-label>
         <input matInput formControlName="phone" />
         <mat-error *ngIf="controls.phone">
           {{ getErrorMessage(controls.phone) }}
         </mat-error>
-      </mat-form-field>
+      </mat-form-field> -->
     </div>
 
     <div>

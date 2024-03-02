@@ -21,8 +21,8 @@
   ],
   "clients": [
     {
-      "firstname": "firstName",
-      "surname": "surName",
+      "firstname": "FirstName",
+      "surname": "TurName",
       "email": "test@com",
       "phone": "iiiiiiiiiiiiiiii",
       "address": "Pruszkow",
@@ -30,13 +30,13 @@
       "id": 1
     },
     {
-      "id": 3,
       "firstname": "Test3",
-      "surname": "surName",
+      "surname": "SurName",
       "email": "test3@com",
       "phone": "123456789",
       "address": "Pruszkow",
-      "postcode": "05-800"
+      "postcode": "05-800",
+      "id": 3
     },
     {
       "firstname": "Marina",
@@ -53,8 +53,26 @@
       "email": "roman@gmail.com",
       "phone": "999-444-222",
       "address": "Ivano-Frankiwsk",
-      "postcode": "78000",
+      "postcode": "78-000",
       "id": 5
+    },
+    {
+      "firstname": "bond",
+      "surname": "James",
+      "email": "bond@777.com",
+      "phone": "+2277777",
+      "address": "London",
+      "postcode": "77-077",
+      "id": 6
+    },
+    {
+      "firstname": "John",
+      "surname": "Rembo",
+      "email": "rembo@stal",
+      "phone": "+99323232323",
+      "address": "Vietnam",
+      "postcode": "00-432",
+      "id": 7
     }
   ]
 }

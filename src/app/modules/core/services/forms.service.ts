@@ -16,6 +16,9 @@ export class FormsService {
     if (control.hasError('maxlength')) {
       return 'You must enter max 50 chars';
     }
+    if (control.hasError('invalidPostcode')) {
+      return 'Kod pocztowy powinien byc w formacie xx-xxx';
+    }
     return control.hasError('email') ? 'Not a valid email' : '';
   }
 }
