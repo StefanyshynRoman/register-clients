@@ -21,22 +21,13 @@
   ],
   "clients": [
     {
-      "id": 1,
       "firstname": "firstName",
       "surname": "surName",
       "email": "test@com",
-      "phone": "123456789",
+      "phone": "iiiiiiiiiiiiiiii",
       "address": "Pruszkow",
-      "postcode": "05-800"
-    },
-    {
-      "id": 2,
-      "firstname": "Test2",
-      "surname": "surName",
-      "email": "test2@com",
-      "phone": "123456789",
-      "address": "Pruszkow",
-      "postcode": "05-800"
+      "postcode": "05-800",
+      "id": 1
     },
     {
       "id": 3,
@@ -46,6 +37,24 @@
       "phone": "123456789",
       "address": "Pruszkow",
       "postcode": "05-800"
+    },
+    {
+      "firstname": "Marina",
+      "surname": "Zhuravel",
+      "email": "marina@gmail.com",
+      "phone": "555333222",
+      "address": "Orativ",
+      "postcode": "32-345",
+      "id": 4
+    },
+    {
+      "firstname": "Roman",
+      "surname": "Stefanyshyn",
+      "email": "roman@gmail.com",
+      "phone": "999-444-222",
+      "address": "Ivano-Frankiwsk",
+      "postcode": "78000",
+      "id": 5
     }
   ]
 }

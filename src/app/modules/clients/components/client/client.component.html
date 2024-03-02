@@ -1,7 +1,21 @@
 <div *ngIf="client">
+  <br />
   <p>Dane klienta:</p>
   <p>{{ client.firstname }} {{ client.surname }}</p>
   <p>Adress e-mail: {{ client.email }}</p>
   <p>Numer tel.: {{ client.phone }}</p>
   <p>Adress zamieszkania: {{ client.postcode }} {{ client.address }}</p>
+  <hr />
+  <div>
+    <p>Edutuj klienta</p>
+    <button mat-raised-button color="primary" (click)="openEditDialog()">
+      Edutuj
+    </button>
+  </div>
+  <br />
+  <div>
+    <p>Usun klienta</p>
+
+    <button mat-raised-button color="warn" (click)="openDialog()">Usun</button>
+  </div>
 </div>

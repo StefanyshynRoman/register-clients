@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Czy usuwac klienta?</h1>
+<mat-dialog-content>
+  <p>Imie i nazwisko:</p>
+  <p>{{ client.firstname }} {{ client.surname }}</p>
+  <app-alert *ngIf="errorMessage">{{ errorMessage }}</app-alert>
+</mat-dialog-content>
+
+<div mat-dialog-actions>
+  <button mat-button color="primary" mat-dialog-close>Anuluj</button>
+  <button mat-button color="warn" (click)="onDelete()" cdkFocusInitial>
+    Usun
+  </button>
+</div>
