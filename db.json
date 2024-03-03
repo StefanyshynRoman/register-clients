@@ -22,7 +22,7 @@
   "clients": [
     {
       "firstname": "FirstName",
-      "surname": "TurName",
+      "surname": "SecondName",
       "email": "test@com",
       "phone": "iiiiiiiiiiiiiiii",
       "address": "Pruszkow",
