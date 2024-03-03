@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { clientFormDeactivateGuard } from '../core/quards/client-form-deactivate.guard';
 import { ClientsComponent } from './clients.component';
 import { ClientFormComponent } from './components/client-form/client-form.component';
 import { ClientComponent } from './components/client/client.component';
-import { clientFormDeactivateGuard } from '../core/quards/client-form-deactivate.guard';
-import { ClientResolver } from '../core/resolvers/client.resolver';
 
 const routes: Routes = [
   {
