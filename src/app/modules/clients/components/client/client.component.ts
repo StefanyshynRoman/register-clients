@@ -6,11 +6,15 @@ import { Client } from 'src/app/modules/core/models/client.model';
 import { ClientsService } from 'src/app/modules/core/services/clients.service';
 import { DeleteClientDialogComponent } from './delete-client-dialog/delete-client-dialog.component';
 import { EditClientDialogComponent } from './edit-client-dialog/edit-client-dialog.component';
+import { MatButtonModule } from '@angular/material/button';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-client',
-  templateUrl: './client.component.html',
-  styleUrls: ['./client.component.scss'],
+    selector: 'app-client',
+    templateUrl: './client.component.html',
+    styleUrls: ['./client.component.scss'],
+    standalone: true,
+    imports: [NgIf, MatButtonModule]
 })
 export class ClientComponent implements OnInit {
   client!: Client;

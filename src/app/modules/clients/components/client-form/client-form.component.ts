@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observer } from 'rxjs';
 import {
@@ -9,11 +9,19 @@ import {
 import { ClientsService } from 'src/app/modules/core/services/clients.service';
 import { FormsService } from 'src/app/modules/core/services/forms.service';
 import { ClientValidators } from 'src/app/modules/shared/validators/client.validators';
+import { AlertComponent } from '../../../shared/components/alert/alert.component';
+import { MatButtonModule } from '@angular/material/button';
+import { PhoneControlComponent } from '../../../shared/controls/phone-control/phone-control.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-client-form',
-  templateUrl: './client-form.component.html',
-  styleUrls: ['./client-form.component.scss'],
+    selector: 'app-client-form',
+    templateUrl: './client-form.component.html',
+    styleUrls: ['./client-form.component.scss'],
+    standalone: true,
+    imports: [NgIf, ReactiveFormsModule, MatFormFieldModule, MatInputModule, PhoneControlComponent, MatButtonModule, AlertComponent]
 })
 export class ClientFormComponent implements OnInit {
   clientForm!: FormGroup<PostClientForm>;

@@ -6,8 +6,14 @@ import { PhoneControlComponent } from './controls/phone-control/phone-control.co
 import { UnlessDirective } from './directives/unless.directive';
 import { MaterialModule } from './material/material.module';
 @NgModule({
-  declarations: [AlertComponent, PhoneControlComponent, UnlessDirective],
-  imports: [CommonModule, ReactiveFormsModule, MaterialModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MaterialModule,
+    AlertComponent,
+    PhoneControlComponent,
+    UnlessDirective,
+  ],
   exports: [
     CommonModule,
     MaterialModule,
@@ -15,7 +21,6 @@ import { MaterialModule } from './material/material.module';
     ReactiveFormsModule,
     AlertComponent,
     PhoneControlComponent,
-
     UnlessDirective,
   ],
 })

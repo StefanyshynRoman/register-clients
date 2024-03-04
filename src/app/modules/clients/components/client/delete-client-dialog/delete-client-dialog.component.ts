@@ -1,13 +1,18 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Client } from 'src/app/modules/core/models/client.model';
 import { ClientsService } from 'src/app/modules/core/services/clients.service';
+import { MatButtonModule } from '@angular/material/button';
+import { AlertComponent } from '../../../../shared/components/alert/alert.component';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-delete-client-dialog',
-  templateUrl: './delete-client-dialog.component.html',
-  styleUrls: ['./delete-client-dialog.component.scss'],
+    selector: 'app-delete-client-dialog',
+    templateUrl: './delete-client-dialog.component.html',
+    styleUrls: ['./delete-client-dialog.component.scss'],
+    standalone: true,
+    imports: [MatDialogModule, NgIf, AlertComponent, MatButtonModule]
 })
 export class DeleteClientDialogComponent implements OnInit {
   client!: Client;

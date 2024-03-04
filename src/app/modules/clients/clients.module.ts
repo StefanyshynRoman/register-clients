@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 
-import { SharedModule } from '../shared/shared.module';
 import { ClientsRoutingModule } from './clients-routing.module';
 import { ClientsComponent } from './clients.component';
 import { ClientsTableComponent } from './components/clients-table/clients-table.component';
@@ -11,7 +10,9 @@ import { EditClientDialogComponent } from './components/client/edit-client-dialo
 import { HighlightDirective } from '../shared/directives/highlight.directive';
 
 @NgModule({
-  declarations: [
+  imports: [
+    ClientsRoutingModule,
+    HighlightDirective,
     ClientsComponent,
     ClientsTableComponent,
     ClientComponent,
@@ -19,7 +20,6 @@ import { HighlightDirective } from '../shared/directives/highlight.directive';
     DeleteClientDialogComponent,
     EditClientDialogComponent,
   ],
-  imports: [SharedModule, ClientsRoutingModule, HighlightDirective],
   exports: [],
 })
 export class ClientsModule {}
