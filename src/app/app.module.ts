@@ -1,6 +1,6 @@
 import { NgModule, isDevMode } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routes';
 import { AppComponent } from './app.component';
 import { AuthModule } from './modules/auth/auth.module';
 import { CoreModule } from './modules/core/core.module';

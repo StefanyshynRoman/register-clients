@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { Client } from 'src/app/modules/core/models/client.model';
@@ -10,11 +10,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgIf } from '@angular/common';
 
 @Component({
-    selector: 'app-client',
-    templateUrl: './client.component.html',
-    styleUrls: ['./client.component.scss'],
-    standalone: true,
-    imports: [NgIf, MatButtonModule]
+  selector: 'app-client',
+  templateUrl: './client.component.html',
+  styleUrls: ['./client.component.scss'],
+  standalone: true,
+  imports: [NgIf, MatButtonModule, MatDialogModule],
 })
 export class ClientComponent implements OnInit {
   client!: Client;

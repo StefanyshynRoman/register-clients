@@ -7,17 +7,21 @@ import {
 import { importProvidersFrom, isDevMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { AppRoutingModule } from './app/app-routing.module';
+import { APP_ROUTES } from './app/app-routes';
 import { AppComponent } from './app/app.component';
 import { AuthModule } from './app/modules/auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerInterceptor } from './app/modules/core/interceptors/spinner.interceptor';
 import { HeaderClassInterceptor } from './app/modules/core/interceptors/header.class.interceptor';
+import {
+  PreloadAllModules,
+  provideRouter,
+  withPreloading,
+} from '@angular/router';
 
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(
-      AppRoutingModule,
       AuthModule,
       BrowserAnimationsModule,
       HttpClientModule,
@@ -28,6 +32,7 @@ bootstrapApplication(AppComponent, {
         registrationStrategy: 'registerWhenStable:30000',
       }),
     ),
+    provideRouter(APP_ROUTES, withPreloading(PreloadAllModules)),
     {
       provide: HTTP_INTERCEPTORS,
       useClass: SpinnerInterceptor,
